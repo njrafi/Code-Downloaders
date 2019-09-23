@@ -5,12 +5,19 @@ Download your Accepted codes from different online judges ( Current support : Co
 ### Prerequisites
 
 python 3.6.4, selenium , Google Chrome
-Install Python, Pip and Chrome
+Install Python, Pip and Chrome ( Update to latest version if already installed)
 Run this command in project folder:
 ```
 pip install -U selenium
 ```
+
+### For windows:
 download chromedriver.exe and copy it to project folder(https://chromedriver.chromium.org/downloads)
+
+### For Mac:
+```
+brew cask install chromedriver
+```
 
 ### Codeforces
 Run this command in project folder:
