@@ -1,15 +1,13 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 import time
 import os
 from selenium.common.exceptions import NoSuchElementException
 import getpass
 
-# important
-# update with your credentials
+
 user_name = input('Enter Your Handle / Email: ')
 user_password = getpass.getpass()
-
+wait_time = 3
 
 def get_extension(language):
     if 'C++' in language:
@@ -46,7 +44,7 @@ passwordForm = driver.find_element_by_id('password')
 userForm.send_keys(user_name)
 passwordForm.send_keys(user_password)
 driver.find_element_by_class_name('submit').click()
-time.sleep(3)
+time.sleep(wait_time)
 if driver.current_url == "https://codeforces.com/enter":
     print("Login failed")
     driver.quit()
@@ -82,16 +80,17 @@ for page in range(totalPages):
             urls.append(url)
             submissionIds.append(sources[i].text)
             filenames.append(problemNames[i].text.replace('?', ''))
+    time.sleep(wait_time)
 
 # print(urls)
 print("Total Accepted Codes : " + str(len(urls)))
 
 for i in range(len(urls)):
-    print(urls[i])
+    #print(urls[i])
     try:
         driver.get(urls[i])
         preText = driver.find_element_by_id('program-source-text').text
-        directory = os.path.join(os.getcwd(), 'codes')
+        directory = os.path.join(os.getcwd(), 'CodeForces ' + user_name)
         language = driver.find_element_by_xpath(
             '//*[@id="pageContent"]/div[2]/div[6]/table/tbody/tr[2]/td[4]').text
         probId = driver.find_element_by_xpath(
@@ -103,6 +102,7 @@ for i in range(len(urls)):
         f = open(path, 'w+')
         f.write(preText)
         f.close()
+        time.sleep(wait_time)
     except NoSuchElementException as ex:
             print("Download Failed: No Such Element")
     except:
