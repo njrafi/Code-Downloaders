@@ -1,6 +1,6 @@
 # Code Downloaders
 
-Download your Accepted codes from different online judges ( Current support : Codeforces, CodeChef, LightOj )
+Download your Accepted codes from different online judges ( Current support : Codeforces, CodeChef, LightOj, HackerRank )
 
 ### Prerequisites
 
@@ -28,6 +28,10 @@ Download your Accepted codes from different online judges ( Current support : Co
 ### LightOj
 - for Windows: `python loj.py`
 - for Mac: `python3 loj.py`
+
+### HackerRank
+- for Windows: `python hr.py`
+- Mac is not supported currently
 
 ## Note
 - Check the code if you are afraid of inputting your userName and password
