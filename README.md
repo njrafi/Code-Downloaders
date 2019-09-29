@@ -1,31 +1,43 @@
 # Code Downloaders
 
-Download your Accepted codes from different online judges ( Current support : Codeforces only)
+Download your Accepted codes from different online judges ( Current support : Codeforces, CodeChef, LightOj )
 
 ### Prerequisites
 
-python 3.6.4, selenium , Google Chrome
-Install Python, Pip and Chrome ( Update to latest version if already installed)
-Run this command in project folder:
-```
-pip install -U selenium
-```
+1. Install python 3 ( https://www.python.org/downloads/ )
+2. Install Google Chrome ( Update to latest version if already installed)
+3. Install Selenium : `pip install selenium`
 
-### For windows:
-download chromedriver.exe and copy it to project folder(https://chromedriver.chromium.org/downloads)
+### For Windows:
+1. download chromedriver.exe and copy it to project folder ( https://chromedriver.chromium.org/downloads )
+2. Make Sure the chromedriver version support the chrome version you are using
 
 ### For Mac:
-```
-brew cask install chromedriver
-```
+1. install homebrew ` /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" `
+2. install chromedriver using homebrew `brew cask install chromedriver`
+
 
 ### Codeforces
-Run this command in project folder:
-```
-python cf.py
-```
-Input your userName and password
+- for Windows: `python cf.py`
+- for Mac: `python3 cf.py`
+- Input your userName and password
+
+### CodeChef
+- for Windows: `python cc.py`
+- for Mac: `python3 cc.py`
+- Input your userName and password
+
+### LightOj
+- for Windows: `python loj.py`
+- for Mac: `python3 loj.py`
+- Input your userName and password
+
+## Note
+- Check the code if you are afraid of inputting your userName and password
+- Logging in is needed because of
+  - Codeforces Gym submissions
+  - CodeChef Captcha Check
+  - LightOj Website is not even browsable without login
 
 ## Acknowledgments
-
 * Got the idea from https://github.com/dipta007/codeforce-code-downloader_gym_regular , Does exactly the same thing. Just wanted to implement it on my own.
