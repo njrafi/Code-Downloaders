@@ -7,11 +7,11 @@ import tkinter as tk
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 import string
+import platform
 
 user_name = input('Enter Your User Name: ')
 user_password = getpass.getpass()
 wait_time = 2
-
 
 def getClipboardText():
     root = tk.Tk()
@@ -47,6 +47,11 @@ def get_extension(language):
         return '.txt'
 
 
+cntrlOrCommand = Keys.CONTROL
+
+if platform.system() == "Darwin":
+    cntrlOrCommand = Keys.META
+
 options = webdriver.ChromeOptions()
 options.add_argument('--ignore-certificate-errors')
 options.add_argument("--test-type")
@@ -80,6 +85,7 @@ while True:
             '//*[@id="content"]/div/div/div[2]/div[3]/article/div/div[2]/section[6]/div/div[2]/button')
         loadMoreButton.click()
         time.sleep(wait_time)
+        console.log('Load More Button Clicked')
     except:
         break
 
@@ -151,11 +157,14 @@ for i in range(len(problemNames)):
     time.sleep(wait_time)
 
     # copying the source code
-    codeWindow = driver.find_element_by_class_name('CodeMirror-code')
-    codeWindow.click()
-    ActionChains(driver).key_down(Keys.CONTROL).send_keys(
-        'a').send_keys('c').key_up(Keys.CONTROL).perform()
-    sourceCode = getClipboardText()
+    try:
+        codeWindow = driver.find_element_by_class_name('CodeMirror-lines')
+        codeWindow.click()
+        ActionChains(driver).key_down(cntrlOrCommand).send_keys(
+            'a').send_keys('c').key_up(cntrlOrCommand).perform()
+        sourceCode = getClipboardText()
+    except:
+        print("Error in Submission Page")
 
     if len(problemName) > 0 and len(sourceCode) > 0:
         if not os.path.exists(directory):
