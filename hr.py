@@ -85,7 +85,7 @@ while True:
             '//*[@id="content"]/div/div/div[2]/div[3]/article/div/div[2]/section[6]/div/div[2]/button')
         loadMoreButton.click()
         time.sleep(wait_time)
-        console.log('Load More Button Clicked')
+        print('Load More Button Clicked')
     except:
         break
 
