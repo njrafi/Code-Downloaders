@@ -31,7 +31,13 @@ Download your Accepted codes from different online judges ( Current support : Co
 
 ### HackerRank
 - for Windows: `python hr.py`
-- Mac is not supported currently
+- for Mac: `python3 hr.py` 
+- Mac version is not tested properly yet
+
+### Vjudge
+- for Windows: `python vjudge.py`
+- for Mac: `python3 vjudge.py`
+- If you want to watch what the browser is doing set `headless = False` and don't minimize the browser ( Or It will Crash)
 
 ## Note
 - Check the code if you are afraid of inputting your userName and password
