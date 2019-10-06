@@ -18,26 +18,30 @@ Download your Accepted codes from different online judges ( Current support : Co
 
 
 ### Codeforces
-- for Windows `python cf.py`
-- for Mac `python3 cf.py`
+- for Windows `python codeForces.py`
+- for Mac `python3 codeForces.py`
 
 ### CodeChef
-- for Windows `python cc.py`
-- for Mac `python3 cc.py`
+- for Windows `python codeChef.py`
+- for Mac `python3 codeChef.py`
 
 ### LightOj
-- for Windows: `python loj.py`
-- for Mac: `python3 loj.py`
+- for Windows: `python lightOj.py`
+- for Mac: `python3 lightOj.py`
 
 ### HackerRank
-- for Windows: `python hr.py`
-- for Mac: `python3 hr.py` 
+- for Windows: `python hackerRank.py`
+- for Mac: `python3 hackerRank.py` 
 - Mac version is not tested properly yet
 
 ### Vjudge
 - for Windows: `python vjudge.py`
 - for Mac: `python3 vjudge.py`
 - If you want to watch what the browser is doing set `headless = False` and don't minimize the browser ( Or It will Crash)
+
+### HackerEarth
+- for Windows: `python hackerEarth.py`
+- for Mac: `python3 hackerEarth.py`
 
 ## Note
 - Check the code if you are afraid of inputting your userName and password
