@@ -24,9 +24,9 @@ def format_filename(s):
 def get_extension(language):
     if 'C++' in language:
         return '.cpp'
-    elif 'JAVA' in language:
+    elif 'Java' in language:
         return '.java'
-    elif 'PYTH' in language:
+    elif 'Python' in language:
         return '.py'
     elif 'C' in language:
         return '.c'
